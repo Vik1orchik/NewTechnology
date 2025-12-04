@@ -1,0 +1,91 @@
+﻿<Window x:Class="NewTechnology.Calculation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Расчет количества продукции" 
+        Height="600" Width="600"
+        WindowStartupLocation="CenterOwner"
+        Loaded="Window_Loaded" OpacityMask="Black">
+
+    <Grid Margin="20" OpacityMask="#FFBBDCFA" Background="#FFBBDCFA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="544.04"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0" Text="Расчет количества материалов" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,515" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+
+        <!-- Основная форма -->
+
+        <Grid Margin="0,29,0,232">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Тип продукции -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Тип продукции:" 
+                           FontWeight="SemiBold" Margin="0,0,10,10" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <ComboBox x:Name="productTypeComboBox" Grid.Row="0" Grid.Column="1" 
+                          Height="30" Margin="0,0,0,10" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+
+            <!-- Тип материала -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Тип материала:" 
+                           FontWeight="SemiBold" Margin="0,0,10,10" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <ComboBox x:Name="materialTypeComboBox" Grid.Row="1" Grid.Column="1" 
+                          Height="30" Margin="0,0,0,10" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+
+            <!-- Кол-во используемого материала -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Кол-во используемого материала:" 
+                           FontWeight="SemiBold" Margin="0,0,10,10" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox x:Name="materialAmountTextBox" Grid.Row="2" Grid.Column="1" 
+                         Height="30" Margin="0,0,0,10" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+
+            <!-- Требуемое количество продукции -->
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Требуемое количество продукции:" 
+                           FontWeight="SemiBold" Margin="0,0,10,10" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox x:Name="requiredProductsTextBox" Grid.Row="3" Grid.Column="1" 
+                         Height="30" Margin="0,0,0,10" Text="10" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+
+            <!-- Количество продукции на складе -->
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Количество на складе:" 
+                           FontWeight="SemiBold" Margin="0,0,10,10" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox x:Name="stockProductsTextBox" Grid.Row="4" Grid.Column="1" 
+                         Height="30" Margin="0,0,0,10" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+
+            <!-- Параметр 1 -->
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Параметр 1:" 
+                           FontWeight="SemiBold" Margin="0,0,10,10" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox x:Name="param1TextBox" Grid.Row="5" Grid.Column="1" 
+                         Height="30" Margin="0,0,0,10" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+
+            <!-- Параметр 2 -->
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Параметр 2:" 
+                           FontWeight="SemiBold" Margin="0,0,10,10" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox x:Name="param2TextBox" Grid.Row="6" Grid.Column="1" 
+                         Height="30" Margin="0,0,0,10" FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+        </Grid>
+
+        <!-- Результат -->
+
+        <TextBlock Text="Итоговое количество продукции:" 
+                               FontWeight="Bold" Margin="0,328,0,177" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+        <TextBlock x:Name="resultTextBlock" Text="0" 
+                               Margin="5,370,-5,134" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+        <!-- Кнопки -->
+        <Button Grid.Column="0" Content="Рассчитать" Height="35" Click="CalculateButton_Click" Margin="85,478,304,31" Background="#FF0C4882" Foreground="White" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+        <Button Content="Назад" Height="35" Click="BackButton_Click"
+                        Margin="308,478,88,31" Foreground="White" Background="#FF0C4882" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+
+    </Grid>
+</Window>

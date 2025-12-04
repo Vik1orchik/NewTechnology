@@ -1,0 +1,85 @@
+﻿<Window x:Class="NewTechnology.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Учет заявок партнеров" Height="700" Width="1020" Loaded="Window_Loaded">
+    <Grid>
+        <ListBox x:Name="applicationsList" 
+                 MouseDoubleClick="applicationsList_MouseDoubleClick"
+                 SelectedValuePath="Id" 
+                 Margin="20,60,20,120" 
+                 Background="White"
+                 BorderThickness="0"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="#FFE0E0E0" 
+                            Background="White"
+                            Width="940" 
+                            Height="140" 
+                            Margin="0,8"
+                            CornerRadius="8">
+                        <Grid Width="920" Height="120" Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Левая часть: информация о партнере -->
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                <!-- Тип | Наименование партнера -->
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                    <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding PartnerType}"/>
+                                    <TextBlock FontSize="16" FontWeight="Bold" Text=" | " Margin="8,0,8,0"/>
+                                    <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding PartnerName}"/>
+                                </StackPanel>
+
+                                <!-- Юридический адрес -->
+                                <TextBlock FontSize="14" Text="{Binding LegalAddress}" 
+                                           Margin="0,0,0,8" Foreground="#FF666666"/>
+
+                                <!-- Телефон и Рейтинг в одной строке -->
+
+                                <TextBlock FontSize="14" Text="{Binding PhoneNumber}" Foreground="#FF666666"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock FontSize="14" Text=" Рейтинг: " Foreground="#FF666666" Margin="0,0,8,0"/>
+                                    <TextBlock FontSize="14" Text="{Binding Rating}"  Foreground="#FF333333"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <!-- Правая часть: Стоимость -->
+                            <Border Grid.Column="1" 
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Right"
+                                    Margin="20,0,0,0">
+                                <StackPanel>
+                                    <TextBlock FontSize="14"  
+                                               Text="{Binding CostText}" 
+                                               HorizontalAlignment="Right"
+                                               Foreground="#FF2C3E50"/>
+                                </StackPanel>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button x:Name="addApplicationBtn" Content="Добавить заявку" HorizontalAlignment="Left" Margin="101,570,0,0" 
+                VerticalAlignment="Top" Click="addApplicationBtn_Click" Background="#FF546F94" Width="215" Height="50" Foreground="White" FontSize="16" FontWeight="SemiBold" FontFamily="Bahnschrift Light SemiCondensed"/>
+
+        <Label Content="Список заявок партнеров" HorizontalAlignment="Center" VerticalAlignment="Top" 
+               FontSize="20" Margin="0,15,0,0" Background="#00000000" FontWeight="Bold" FontFamily="Bahnschrift Light SemiCondensed"/>
+
+        <Image HorizontalAlignment="Left" Height="45" Margin="25,12,0,0" VerticalAlignment="Top" Width="45" 
+               Source="/Новые технологии.png"/>
+
+        <Button x:Name="productsBtn" Content="Список продукции" HorizontalAlignment="Center" Margin="0,570,0,0" 
+            VerticalAlignment="Top" Click="productsBtn_Click" Background="#FF546F94" Width="216" Height="50" Foreground="White" FontSize="16" FontWeight="SemiBold" FontFamily="Bahnschrift Light SemiCondensed"/>
+        <Button x:Name="calculationProducts_Btn" Content="Расчет количества материала" HorizontalAlignment="Left" Margin="683,570,0,0" 
+            VerticalAlignment="Top" Click="calculationProducts_Btn_Click" Background="#FF546F94" Width="216" Height="50" Foreground="White" FontSize="16" FontWeight="SemiBold" FontFamily="Bahnschrift Light SemiCondensed"/>
+    </Grid>
+</Window>

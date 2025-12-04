@@ -1,0 +1,183 @@
+﻿<Window x:Class="NewTechnology.EditApplication"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Партнер" Height="700" Width="750"
+        WindowStartupLocation="CenterOwner">
+
+    <Grid Background="#FFBBDCFA" Margin="10,54,10,12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="290"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0" Text="Данные партнера" 
+                   FontSize="20" FontWeight="Bold" Margin="266,-44,266,304" FontFamily="Bahnschrift Light SemiCondensed"/>
+
+        <!-- Форма -->
+        <Grid Margin="0,45,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Тип партнера -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Тип партнера:" 
+                       Margin="0,5,10,5" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <ComboBox Grid.Row="0" Grid.Column="1" x:Name="typeComboBox" 
+                      Margin="0,5,0,5" Height="25" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+            <!-- УБРАЛ Binding -->
+
+            <!-- Наименование -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Название компании:" 
+                       Margin="0,5,10,5" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="nameTextBox" 
+                     Height="25" Margin="0,5,0,5" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+            <!-- УБРАЛ Binding -->
+
+            <!-- ФИО -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="ФИО директора:" 
+                       Margin="0,5,10,5" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <Grid Grid.Row="2" Grid.Column="1" Margin="0,5,0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" x:Name="lastNameTextBox" 
+                         Height="25" Margin="0,0,5,0" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+                <!-- УБРАЛ Binding -->
+                <TextBox Grid.Column="1" x:Name="firstNameTextBox" 
+                         Height="25" Margin="5,0,5,0" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+                <!-- УБРАЛ Binding -->
+                <TextBox Grid.Column="2" x:Name="middleNameTextBox" 
+                         Height="25" Margin="5,0,0,0" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+                <!-- УБРАЛ Binding -->
+            </Grid>
+
+            <!-- Адрес -->
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Адрес:" 
+                       Margin="0,5,10,5" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="addressTextBox" 
+                     Height="25" Margin="0,5,0,5" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+            <!-- УБРАЛ Binding -->
+
+            <!-- Телефон -->
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Телефон:" 
+                       Margin="0,5,10,5" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="phoneTextBox" 
+                     Height="25" Margin="0,5,0,5" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+            <!-- УБРАЛ Binding -->
+
+            <!-- Email -->
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Email:" 
+                       Margin="0,5,10,5" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="emailTextBox" 
+                     Height="25" Margin="0,5,0,5" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+            <!-- УБРАЛ Binding -->
+
+            <!-- Рейтинг -->
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Рейтинг:" 
+                       Margin="0,5,10,5" VerticalAlignment="Center" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+            <TextBox Grid.Row="6" Grid.Column="1" x:Name="ratingTextBox" 
+                     Height="25" Margin="0,5,0,5" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16"/>
+            <!-- УБРАЛ Binding -->
+        </Grid>
+
+        <!-- Продукция -->
+        <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="1" Margin="0,15,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Продукция в заявках партнера" 
+                           Background="LightGray" Padding="10" FontWeight="Bold" FontFamily="Bahnschrift Light SemiCondensed" FontSize="16"/>
+
+                <DataGrid x:Name="productsDataGrid" 
+         AutoGenerateColumns="False" 
+         CanUserAddRows="False"
+         CanUserDeleteRows="False"
+         IsReadOnly="False"
+         SelectionMode="Single" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16" Margin="0,39,0,62" Grid.RowSpan="2">
+                    <DataGrid.Columns>
+                        <!-- CheckBox для выбора -->
+                        <DataGridTemplateColumn Header="Выбрать" Width="60">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Выбрано, UpdateSourceTrigger=PropertyChanged}"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <!-- Код продукции -->
+                        <DataGridTextColumn Header="Код" 
+                          Binding="{Binding Код}" 
+                          Width="60" IsReadOnly="True"/>
+
+                        <!-- Название продукции -->
+                        <DataGridTextColumn Header="Название" 
+                          Binding="{Binding Наименование}" 
+                          Width="*" IsReadOnly="True"/>
+
+                        <!-- Количество (только для выбранных) -->
+                        <DataGridTemplateColumn Header="Количество" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding Количество, UpdateSourceTrigger=PropertyChanged}"
+                             Width="70"
+                             HorizontalAlignment="Left"
+                             IsEnabled="{Binding Выбрано}">
+                                        <TextBox.Style>
+                                            <Style TargetType="TextBox">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Выбрано}" Value="False">
+                                                        <Setter Property="Background" Value="LightGray"/>
+                                                        <Setter Property="IsReadOnly" Value="True"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Выбрано}" Value="True">
+                                                        <Setter Property="Background" Value="White"/>
+                                                        <Setter Property="IsReadOnly" Value="False"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBox.Style>
+                                    </TextBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- Кнопки -->
+        <Grid Grid.Row="1" Margin="0,262,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" Content="Отмена" Width="80" Height="30" 
+                    Margin="5,-12,5,16" Click="CancelButton_Click" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16" Foreground="White" Background="#FF0C4882"/>
+            <Button Grid.Column="2" Content="Сохранить" Width="80" Height="30" 
+                    Click="SaveButton_Click" TextBlock.FontFamily="Bahnschrift Light SemiCondensed" TextBlock.FontSize="16" Background="#FF0C4882" Foreground="White" Margin="0,-12,0,16"/>
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="45" 
+            Source="/Новые технологии.png" Margin="0,-52,0,0"/>
+    </Grid>
+</Window>

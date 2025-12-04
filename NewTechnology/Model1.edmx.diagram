@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b0e46a7b2ba3490e8a25331e03b9df07" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="NewTechnologyModel.ЕдИзм" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.Материалы" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.Партнеры" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.Поставщики" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.Продукция" Width="1.5" PointX="8" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.СоставЗаявки" Width="1.5" PointX="12.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.Сотрудники" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.ТипМатериалов" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.ТипПартнеров" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewTechnologyModel.ТипПродукции" Width="1.5" PointX="5.75" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="NewTechnologyModel.FK_Материалы_ЕдИзм" ManuallyRouted="false" />
+        <AssociationConnector Association="NewTechnologyModel.FK_Материалы_Поставщики" ManuallyRouted="false" />
+        <AssociationConnector Association="NewTechnologyModel.FK_Материалы_ТипМатериалов" ManuallyRouted="false" />
+        <AssociationConnector Association="NewTechnologyModel.FK_Партнеры_ТипПартнеров" ManuallyRouted="false" />
+        <AssociationConnector Association="NewTechnologyModel.FK_Продукция_ТипПродукции" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NewTechnologyModel.Заявка" Width="1.5" PointX="10.25" PointY="6" />
+        <AssociationConnector Association="NewTechnologyModel.FK_Заявка_СоставЗаявки1" />
+        <AssociationConnector Association="NewTechnologyModel.FK_СоставЗаявки_Партнеры1" />
+        <AssociationConnector Association="NewTechnologyModel.FK_СоставЗаявки_Продукция1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
